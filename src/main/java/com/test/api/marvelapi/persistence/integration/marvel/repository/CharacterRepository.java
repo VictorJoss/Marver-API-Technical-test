@@ -1,4 +1,4 @@
-package com.test.api.marvelapi.persistence.repository;
+package com.test.api.marvelapi.persistence.integration.marvel.repository;
 
 import com.test.api.marvelapi.dto.MyPageable;
 import com.test.api.marvelapi.persistence.integration.marvel.dto.CharacterDto;

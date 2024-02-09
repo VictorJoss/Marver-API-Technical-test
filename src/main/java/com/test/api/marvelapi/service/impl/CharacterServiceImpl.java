@@ -2,7 +2,7 @@ package com.test.api.marvelapi.service.impl;
 
 import com.test.api.marvelapi.dto.MyPageable;
 import com.test.api.marvelapi.persistence.integration.marvel.dto.CharacterDto;
-import com.test.api.marvelapi.persistence.repository.CharacterRepository;
+import com.test.api.marvelapi.persistence.integration.marvel.repository.CharacterRepository;
 import com.test.api.marvelapi.service.CharacterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
