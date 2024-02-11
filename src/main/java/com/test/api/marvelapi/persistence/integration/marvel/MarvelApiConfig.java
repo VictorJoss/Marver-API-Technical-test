@@ -15,7 +15,7 @@ public class MarvelApiConfig {
 
     @Autowired
     @Qualifier("md5Encoder")
-    private PasswordEncoder md5Encoder
+    private PasswordEncoder md5Encoder;
 
     private long timestamp = new Date(System.currentTimeMillis()).getTime();
     @Value("${marvel.api.public-key}")
