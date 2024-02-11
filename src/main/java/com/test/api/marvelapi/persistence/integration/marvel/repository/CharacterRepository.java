@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.test.api.marvelapi.dto.MyPageable;
 import com.test.api.marvelapi.persistence.integration.marvel.MarvelApiConfig;
 import com.test.api.marvelapi.persistence.integration.marvel.dto.CharacterDto;
+import com.test.api.marvelapi.service.HttpClientService;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -21,6 +22,9 @@ public class CharacterRepository {
     @Autowired
     private MarvelApiConfig marvelApiConfig;
 
+    @Autowired
+    private HttpClientService httpClientService;
+
     @Value("${marvel.api.base-path}")
     private String basePath;
     private String characterPath;
@@ -33,7 +37,7 @@ public class CharacterRepository {
     public List<CharacterDto> findAll(MyPageable pageable, String name, int[] comics, int[] series) {
 
         Map<String, String> marvelQueryParams = getQueryParamsForFindAll(pageable, name, comics, series);
-        
+
         JsonNode response = httpClientService.doGet(characterPath, marvelQueryParams, JsonNode.class);
 
         return CharacterMapper.toDtoList(response);
