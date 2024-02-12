@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.test.api.marvelapi.dto.MyPageable;
 import com.test.api.marvelapi.persistence.integration.marvel.MarvelApiConfig;
 import com.test.api.marvelapi.persistence.integration.marvel.dto.ComicDto;
+import com.test.api.marvelapi.persistence.integration.marvel.mapper.ComicMapper;
 import com.test.api.marvelapi.service.HttpClientService;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
