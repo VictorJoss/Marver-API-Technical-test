@@ -1,4 +1,4 @@
-package com.test.api.marvelapi.service.impl;
+package com.test.api.marvelapi.service;
 
 import com.test.api.marvelapi.dto.security.LoginRequest;
 import com.test.api.marvelapi.dto.security.LoginResponse;
@@ -29,6 +29,9 @@ public class AuthenticationService {
 
     @Autowired
     private AuthenticationManager authenticationManager;
+
+    @Autowired
+    private JwtService jwtService;
 
     public LoginResponse autheticate(LoginRequest loginRequest) {
 

@@ -26,7 +26,7 @@ public class CharacterRepository {
     @Autowired
     private HttpClientService httpClientService;
 
-    @Value("${marvel.api.base-path}")
+    @Value("${integration.marvel.api.base-path}")
     private String basePath;
     private String characterPath;
 

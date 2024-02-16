@@ -18,9 +18,9 @@ public class MarvelApiConfig {
     private PasswordEncoder md5Encoder;
 
     private long timestamp = new Date(System.currentTimeMillis()).getTime();
-    @Value("${marvel.api.public-key}")
+    @Value("${integration.marvel.api.public-key}")
     private String publicKey;
-    @Value("${marvel.api.private-key}")
+    @Value("${integration.marvel.api.private-key}")
     private String privateKey;
 
     private String getHash(){

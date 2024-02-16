@@ -2,7 +2,7 @@ package com.test.api.marvelapi.web.controller;
 
 import com.test.api.marvelapi.dto.security.LoginRequest;
 import com.test.api.marvelapi.dto.security.LoginResponse;
-import com.test.api.marvelapi.service.impl.AuthenticationService;
+import com.test.api.marvelapi.service.AuthenticationService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
