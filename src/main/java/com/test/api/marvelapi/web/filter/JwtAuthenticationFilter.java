@@ -1,4 +1,4 @@
-package com.test.api.marvelapi.web.controller.filter;
+package com.test.api.marvelapi.web.filter;
 
 import com.test.api.marvelapi.service.JwtService;
 import io.jsonwebtoken.JwtException;

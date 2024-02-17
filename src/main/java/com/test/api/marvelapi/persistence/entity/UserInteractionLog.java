@@ -2,7 +2,6 @@ package com.test.api.marvelapi.persistence.entity;
 
 import jakarta.persistence.*;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -14,7 +13,7 @@ public class UserInteractionLog {
 
     @Column(length = 500)
     private String url;
-    private String method;
+    private String httpMethod;
     private String username;
     private LocalDateTime timestamp;
     private String remoteAddress;
@@ -35,12 +34,12 @@ public class UserInteractionLog {
         this.url = url;
     }
 
-    public String getMethod() {
-        return method;
+    public String getHttpMethod() {
+        return httpMethod;
     }
 
-    public void setMethod(String method) {
-        this.method = method;
+    public void setHttpMethod(String httpMethod) {
+        this.httpMethod = httpMethod;
     }
 
     public String getUsername() {
