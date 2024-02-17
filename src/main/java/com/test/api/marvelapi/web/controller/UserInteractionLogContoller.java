@@ -7,6 +7,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -16,6 +17,7 @@ public class UserInteractionLogContoller {
     @Autowired
     private UserInteractionLogService userInteractionLogService;
 
+    @PreAuthorize("hasAuthority('user-interaction:read-all')")
     @GetMapping
     public ResponseEntity<Page<GetUserInteractionLogDto>> findAll(
             @RequestParam(defaultValue = "0") int offset,
@@ -46,6 +48,7 @@ public class UserInteractionLogContoller {
         return pageable;
     }
 
+    @PreAuthorize("hasAuthority('user-interaction:read-by-username') || (@interactionLogValidator.validate(#username) && hasAuthority('user-interaction:read-my-interactions'))")
     @GetMapping("/{username}")
     public ResponseEntity<Page<GetUserInteractionLogDto>> findByUsername(
             @PathVariable String username,
